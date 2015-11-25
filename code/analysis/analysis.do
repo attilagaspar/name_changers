@@ -1,25 +1,37 @@
-use bpp_with_namevars.dta, clear
+use ../../data/bpp_with_namevars.dta, clear
 set more off
+
+local outpath="../../results/tables/basic_regs/"
 
 * cleaning issues
 replace changer = 1 if oldname!=""
 
 
 * jewish share
+/*
 gen jewish_share1= ngr1_newname_count_jewish/ ngr1_newname_count
 gen jewish_share2= ngr2_newname_count_jewish/ ngr2_newname_count
 gen jewish_share=jewish_share1
 replace jewish_share=jewish_share2 if oldname!=""
-gen js2=jewish_share
-replace js2=0 if js2==.
-la var js2 "share of jews among people who change names from this surname"
+gen jewish_share_old=jewish_share
+replace jewish_share_old=0 if jewish_share_old==.
+la var jewish_share_old "share of jews among people who change names from this surname"*/
+
+gen jewish_share_old=ngr1_oldname_count_jewish/ ngr1_oldname_count
+replace jewish_share_old=ngr2_oldname_count_jewish/ ngr2_oldname_count if changer==1
+gen jewish_share_new=ngr1_newname_count_jewish/ ngr1_newname_count
+
+replace jewish_share_old=0 if jewish_share_old==.
+replace jewish_share_new=0 if jewish_share_new==.
+
+la var jewish_share_old "share of jewish in adopted name or present name"
+la var jewish_share_new "share of jewish in old name or present name"
 
 * changer count
 gen changer_count=ngr1_oldname_count
 replace changer_count=ngr2_oldname_count if oldname!=""
 gen has_changer=0
 replace has_changer=1 if changer_count>0
-la var js2 "this surname has name changers abandoning this name"
 
 
 egen t=group(year)
@@ -57,7 +69,7 @@ local x3d = "prepost"
 
 foreach v in "lsalary1" "lsalary_avg"	"lsalary_avg"	"ltotal_salary"	"ltotal_salary_avg" {
 	
-	cap rm regs_1120_`v'.xls
+	cap rm `outpath'regs_1120_`v'.xls
 
 
 }
@@ -69,20 +81,20 @@ foreach v in "lsalary1" "lsalary_avg"	"lsalary_avg"	"ltotal_salary"	"ltotal_sala
 			
 			foreach s in "se1" "se2"  {
 			
-				reg `v' ``x''##c.js2 `contr'  ``sam'', ``s''
-				outreg2 using regs_1120_`v'.xls, append  ///
+				reg `v' ``x''##c.jewish_share_old `contr'  ``sam'', ``s''
+				outreg2 using `outpath'regs_1120_`v'.xls, append  ///
 				addtext(model, level, righthand, ``x'd', sampleused, ``sam'desc', serror, ``s'') drop(`contr')
 			
 			}
-			*keep(`x''##c.js2)
+			*keep(`x''##c.jewish_share_old)
 			
 			
 		}
 		
 			foreach s in "se1" "se2" "se3" {
 			
-				reg d.`v' ``x''##c.js2 `contr'  , ``s''
-				outreg2 using regs_1120_`v'.xls, append  ///
+				reg d.`v' ``x''##c.jewish_share_old `contr'  , ``s''
+				outreg2 using `outpath'regs_1120_`v'.xls, append  ///
 				addtext(model, difference, righthand ,``x'd', sampleused, whole, serror, ``s'') drop(`contr')
 				
 			
@@ -96,24 +108,24 @@ foreach v in "lsalary1" "lsalary_avg"	"lsalary_avg"	"ltotal_salary"	"ltotal_sala
 
 /*
 
-reg lsalary1 changer##c.js2 age agesq exp expsq has_school i.year gworkplace_broad* if year==exit
-reg lsalary1 changer##c.js2 age agesq exp expsq has_school i.year gworkplace_broad* if year==exit & has_changer==1
-reg d.lsalary1 changer##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, rob
+reg lsalary1 changer##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad* if year==exit
+reg lsalary1 changer##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad* if year==exit & has_changer==1
+reg d.lsalary1 changer##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, rob
 
-reg lsalary1 (changer change_1898 change_after)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad* if year==exit
-reg lsalary1 (changer change_1898 change_after)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad* if year==exit & has_changer==1
-reg d.lsalary1 (changer change_1898 change_after)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*
-reg d.lsalary1 (changer change_1898 change_after)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, rob
-reg d.lsalary1 (changer change_1898 change_after)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster idmaster)
-reg d.lsalary1 (changer change_1898 change_after)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster workplace_broad)
+reg lsalary1 (changer change_1898 change_after)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad* if year==exit
+reg lsalary1 (changer change_1898 change_after)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad* if year==exit & has_changer==1
+reg d.lsalary1 (changer change_1898 change_after)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*
+reg d.lsalary1 (changer change_1898 change_after)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, rob
+reg d.lsalary1 (changer change_1898 change_after)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster idmaster)
+reg d.lsalary1 (changer change_1898 change_after)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster workplace_broad)
 
 
-reg lsalary1 (change_pre change_post)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad* if year==exit
-reg lsalary1 (change_pre change_post)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad* if year==exit & has_changer==1
-reg d.lsalary1 (change_pre change_post)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*
-reg d.lsalary1 (change_pre change_post)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, rob
-reg d.lsalary1 (change_pre change_post)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster idmaster)
-reg d.lsalary1 (change_pre change_post)##c.js2 age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster workplace_broad)
+reg lsalary1 (change_pre change_post)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad* if year==exit
+reg lsalary1 (change_pre change_post)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad* if year==exit & has_changer==1
+reg d.lsalary1 (change_pre change_post)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*
+reg d.lsalary1 (change_pre change_post)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, rob
+reg d.lsalary1 (change_pre change_post)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster idmaster)
+reg d.lsalary1 (change_pre change_post)##c.jewish_share_old age agesq exp expsq has_school i.year gworkplace_broad*, vce (cluster workplace_broad)
 
 
 

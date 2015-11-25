@@ -1,0 +1,49 @@
+	(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)	(15)	(16)	(17)	(18)	(19)	(20)	(21)
+VARIABLES	ltotal_salary	ltotal_salary	ltotal_salary	ltotal_salary	D.ltotal_salary	D.ltotal_salary	D.ltotal_salary	ltotal_salary	ltotal_salary	ltotal_salary	ltotal_salary	D.ltotal_salary	D.ltotal_salary	D.ltotal_salary	ltotal_salary	ltotal_salary	ltotal_salary	ltotal_salary	D.ltotal_salary	D.ltotal_salary	D.ltotal_salary
+																					
+1.changer	-0.104***	-0.104***	-0.0406	-0.0406	-0.0183*	-0.0183	-0.0183*	-0.00691	-0.00691	0.0704	0.0704*	-0.00794	-0.00794	-0.00794							
+	(0.0260)	(0.0313)	(0.0291)	(0.0271)	(0.0110)	(0.0115)	(0.0101)	(0.0434)	(0.0452)	(0.0476)	(0.0404)	(0.0156)	(0.0179)	(0.0130)							
+1.change_1898								-0.136*	-0.136**	-0.144*	-0.144**	0.0112	0.0112	0.0112							
+								(0.0739)	(0.0635)	(0.0771)	(0.0643)	(0.0241)	(0.0174)	(0.0227)							
+1.change_after1899								-0.164***	-0.164***	-0.186***	-0.186***	-0.0474*	-0.0474	-0.0474**							
+								(0.0534)	(0.0502)	(0.0560)	(0.0472)	(0.0260)	(0.0287)	(0.0237)							
+jewish_share_old	0.0673*	0.0673*	0.148***	0.148***	0.00902	0.00902	0.00902	0.0672*	0.0672*	0.148***	0.148***	0.00922	0.00922	0.00922	0.0696*	0.0696*	0.149***	0.149***	0.0102	0.0102	0.0102
+	(0.0371)	(0.0353)	(0.0401)	(0.0345)	(0.0163)	(0.00955)	(0.0149)	(0.0371)	(0.0353)	(0.0402)	(0.0343)	(0.0164)	(0.00958)	(0.0149)	(0.0364)	(0.0354)	(0.0394)	(0.0345)	(0.0161)	(0.00909)	(0.0142)
+0b.changer#co.jewish_share_old	0	0	0	0	0	0	0	0	0	0	0	0	0	0							
+	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)							
+1.changer#c.jewish_share_old	0.156***	0.156*	0.0875	0.0875	0.0352	0.0352**	0.0352	0.0957	0.0957	0.0307	0.0307	0.00336	0.00336	0.00336							
+	(0.0590)	(0.0803)	(0.0610)	(0.0742)	(0.0255)	(0.0156)	(0.0223)	(0.0914)	(0.127)	(0.0935)	(0.111)	(0.0322)	(0.0263)	(0.0258)							
+0b.change_1898#co.jewish_share_old								0	0	0	0	0	0	0							
+								(0)	(0)	(0)	(0)	(0)	(0)	(0)							
+1.change_1898#c.jewish_share_old								0.0212	0.0212	0.0144	0.0144	0.0343	0.0343	0.0343							
+								(0.141)	(0.114)	(0.141)	(0.100)	(0.0472)	(0.0375)	(0.0449)							
+0b.change_after1899#co.jewish_share_old								0	0	0	0	0	0	0							
+								(0)	(0)	(0)	(0)	(0)	(0)	(0)							
+1.change_after1899#c.jewish_share_old								0.106	0.106	0.0948	0.0948	0.0984**	0.0984**	0.0984**							
+								(0.103)	(0.117)	(0.104)	(0.107)	(0.0472)	(0.0395)	(0.0405)							
+o.gworkplace_broad30	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+																					
+1.change_pre															-0.114***	-0.114**	-0.0470	-0.0470	-0.0288	-0.0288	-0.0288*
+															(0.0357)	(0.0418)	(0.0388)	(0.0423)	(0.0178)	(0.0196)	(0.0158)
+1.change_post															-0.0902**	-0.0902**	-0.0273	-0.0273	-0.0114	-0.0114	-0.0114
+															(0.0382)	(0.0423)	(0.0414)	(0.0353)	(0.0135)	(0.00872)	(0.0126)
+0b.change_pre#co.jewish_share_old															0	0	0	0	0	0	0
+															(0)	(0)	(0)	(0)	(0)	(0)	(0)
+1.change_pre#c.jewish_share_old															0.185**	0.185**	0.122	0.122	0.0408	0.0408	0.0408
+															(0.0723)	(0.0793)	(0.0742)	(0.0722)	(0.0349)	(0.0247)	(0.0290)
+0b.change_post#co.jewish_share_old															0	0	0	0	0	0	0
+															(0)	(0)	(0)	(0)	(0)	(0)	(0)
+1.change_post#c.jewish_share_old															0.105	0.105	0.0316	0.0316	0.0312	0.0312*	0.0312
+															(0.0809)	(0.0903)	(0.0819)	(0.0862)	(0.0307)	(0.0162)	(0.0275)
+Constant	7.036***	7.036***	7.248***	7.248***	0.865***	0.865***	0.865***	7.045***	7.045***	7.265***	7.265***	0.874***	0.874***	0.874***	7.033***	7.033***	7.243***	7.243***	0.865***	0.865***	0.865***
+	(0.178)	(0.157)	(0.269)	(0.293)	(0.0867)	(0.152)	(0.0746)	(0.178)	(0.158)	(0.267)	(0.282)	(0.0866)	(0.154)	(0.0749)	(0.178)	(0.157)	(0.269)	(0.291)	(0.0868)	(0.152)	(0.0747)
+																					
+Observations	3,982	3,982	2,207	2,207	3,715	3,715	3,715	3,982	3,982	2,207	2,207	3,715	3,715	3,715	3,982	3,982	2,207	2,207	3,715	3,715	3,715
+R-squared	0.410	0.410	0.385	0.385	0.354	0.354	0.354	0.412	0.412	0.389	0.389	0.355	0.355	0.355	0.410	0.410	0.385	0.385	0.354	0.354	0.354
+model	level	level	level	level	difference	difference	difference	level	level	level	level	difference	difference	difference	level	level	level	level	difference	difference	difference
+righthand	changer	changer	changer	changer	changer	changer	changer	1898	1898	1898	1898	1898	1898	1898	prepost	prepost	prepost	prepost	prepost	prepost	prepost
+sampleused	last year	last year	ly and has changer	ly and has changer	whole	whole	whole	last year	last year	ly and has changer	ly and has changer	whole	whole	whole	last year	last year	ly and has changer	ly and has changer	whole	whole	whole
+serror	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	vce(cluster idmaster	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	vce(cluster idmaster	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	vce(cluster idmaster
+)																					
+Robust standard errors in parentheses																					
+*** p<0.01, ** p<0.05, * p<0.1																					

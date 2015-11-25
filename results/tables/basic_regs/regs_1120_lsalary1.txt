@@ -1,0 +1,49 @@
+	(1)	(2)	(3)	(4)	(5)	(6)	(7)	(8)	(9)	(10)	(11)	(12)	(13)	(14)	(15)	(16)	(17)	(18)	(19)	(20)	(21)
+VARIABLES	lsalary1	lsalary1	lsalary1	lsalary1	D.lsalary1	D.lsalary1	D.lsalary1	lsalary1	lsalary1	lsalary1	lsalary1	D.lsalary1	D.lsalary1	D.lsalary1	lsalary1	lsalary1	lsalary1	lsalary1	D.lsalary1	D.lsalary1	D.lsalary1
+																					
+1.changer	-0.0914***	-0.0914***	-0.0248	-0.0248	-0.0171*	-0.0171	-0.0171*	-0.00201	-0.00201	0.0778	0.0778*	-0.00264	-0.00264	-0.00264							
+	(0.0256)	(0.0307)	(0.0286)	(0.0243)	(0.0104)	(0.0106)	(0.00960)	(0.0440)	(0.0517)	(0.0480)	(0.0450)	(0.0146)	(0.0178)	(0.0130)							
+1.change_1898								-0.106	-0.106	-0.117	-0.117*	-0.00219	-0.00219	-0.00219							
+								(0.0745)	(0.0624)	(0.0781)	(0.0615)	(0.0235)	(0.0186)	(0.0216)							
+1.change_after1899								-0.160***	-0.160***	-0.179***	-0.179***	-0.0489**	-0.0489	-0.0489**							
+								(0.0527)	(0.0570)	(0.0551)	(0.0536)	(0.0237)	(0.0299)	(0.0224)							
+jewish_share_old	0.0536	0.0536	0.136***	0.136***	0.00813	0.00813	0.00813	0.0531	0.0531	0.134***	0.134***	0.00835	0.00835	0.00835	0.0570	0.0570*	0.138***	0.138***	0.0109	0.0109	0.0109
+	(0.0363)	(0.0352)	(0.0393)	(0.0355)	(0.0138)	(0.0103)	(0.0134)	(0.0363)	(0.0351)	(0.0394)	(0.0351)	(0.0138)	(0.0103)	(0.0135)	(0.0356)	(0.0329)	(0.0386)	(0.0342)	(0.0138)	(0.00970)	(0.0129)
+0b.changer#co.jewish_share_old	0	0	0	0	0	0	0	0	0	0	0	0	0	0							
+	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)	(0)							
+1.changer#c.jewish_share_old	0.156***	0.156*	0.0866	0.0866	0.0477**	0.0477***	0.0477**	0.146	0.146	0.0791	0.0791	0.0212	0.0212	0.0212							
+	(0.0585)	(0.0880)	(0.0604)	(0.0839)	(0.0223)	(0.0160)	(0.0200)	(0.0933)	(0.140)	(0.0950)	(0.127)	(0.0287)	(0.0251)	(0.0237)							
+0b.change_1898#co.jewish_share_old								0	0	0	0	0	0	0							
+								(0)	(0)	(0)	(0)	(0)	(0)	(0)							
+1.change_1898#c.jewish_share_old								-0.0271	-0.0271	-0.0263	-0.0263	0.0355	0.0355	0.0355							
+								(0.146)	(0.127)	(0.146)	(0.111)	(0.0452)	(0.0319)	(0.0410)							
+0b.change_after1899#co.jewish_share_old								0	0	0	0	0	0	0							
+								(0)	(0)	(0)	(0)	(0)	(0)	(0)							
+1.change_after1899#c.jewish_share_old								0.0199	0.0199	0.00771	0.00771	0.0709*	0.0709*	0.0709**							
+								(0.103)	(0.107)	(0.103)	(0.0972)	(0.0412)	(0.0355)	(0.0353)							
+o.gworkplace_broad30	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-
+																					
+1.change_pre															-0.0939***	-0.0939**	-0.0247	-0.0247	-0.0183	-0.0183	-0.0183
+															(0.0342)	(0.0442)	(0.0369)	(0.0406)	(0.0173)	(0.0220)	(0.0161)
+1.change_post															-0.0828**	-0.0828**	-0.0158	-0.0158	-0.0143	-0.0143	-0.0143
+															(0.0387)	(0.0380)	(0.0420)	(0.0333)	(0.0127)	(0.00878)	(0.0117)
+0b.change_pre#co.jewish_share_old															0	0	0	0	0	0	0
+															(0)	(0)	(0)	(0)	(0)	(0)	(0)
+1.change_pre#c.jewish_share_old															0.177**	0.177*	0.112	0.112	0.0380	0.0380	0.0380
+															(0.0704)	(0.0918)	(0.0719)	(0.0876)	(0.0325)	(0.0289)	(0.0277)
+0b.change_post#co.jewish_share_old															0	0	0	0	0	0	0
+															(0)	(0)	(0)	(0)	(0)	(0)	(0)
+1.change_post#c.jewish_share_old															0.110	0.110	0.0352	0.0352	0.0492*	0.0492***	0.0492**
+															(0.0837)	(0.0967)	(0.0849)	(0.0964)	(0.0259)	(0.0124)	(0.0229)
+Constant	6.879***	6.879***	7.090***	7.090***	0.555***	0.555***	0.555***	6.894***	6.894***	7.117***	7.117***	0.563***	0.563***	0.563***	6.877***	6.877***	7.086***	7.086***	0.554***	0.554***	0.554***
+	(0.179)	(0.172)	(0.272)	(0.296)	(0.0633)	(0.105)	(0.0560)	(0.178)	(0.172)	(0.268)	(0.285)	(0.0633)	(0.108)	(0.0562)	(0.179)	(0.172)	(0.272)	(0.295)	(0.0634)	(0.104)	(0.0560)
+																					
+Observations	3,986	3,986	2,209	2,209	3,768	3,768	3,768	3,986	3,986	2,209	2,209	3,768	3,768	3,768	3,986	3,986	2,209	2,209	3,768	3,768	3,768
+R-squared	0.405	0.405	0.369	0.369	0.358	0.358	0.358	0.407	0.407	0.374	0.374	0.359	0.359	0.359	0.405	0.405	0.369	0.369	0.358	0.358	0.358
+model	level	level	level	level	difference	difference	difference	level	level	level	level	difference	difference	difference	level	level	level	level	difference	difference	difference
+righthand	changer	changer	changer	changer	changer	changer	changer	1898	1898	1898	1898	1898	1898	1898	prepost	prepost	prepost	prepost	prepost	prepost	prepost
+sampleused	last year	last year	ly and has changer	ly and has changer	whole	whole	whole	last year	last year	ly and has changer	ly and has changer	whole	whole	whole	last year	last year	ly and has changer	ly and has changer	whole	whole	whole
+serror	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	vce(cluster idmaster	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	vce(cluster idmaster	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	rob	vce(cluster workplace_broad	vce(cluster idmaster
+)																					
+Robust standard errors in parentheses																					
+*** p<0.01, ** p<0.05, * p<0.1																					

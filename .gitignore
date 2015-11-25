@@ -1,6 +1,9 @@
 #data files for name frequency tool
 tools/name_frequency_collector/raw/*
 
+#stata files in general should not be uploaded
+*.dta
+
 
 # Windows image file caches
 Thumbs.db
