@@ -1,3 +1,7 @@
+#data files for name frequency tool
+tools/name_frequency_collector/raw/*
+
+
 # Windows image file caches
 Thumbs.db
 ehthumbs.db
